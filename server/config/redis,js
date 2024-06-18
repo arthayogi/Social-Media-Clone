@@ -1,0 +1,14 @@
+require("dotenv").config();
+const Redis = require("ioredis");
+const password = process.env.REDIS_PASS
+
+const redis = new Redis();
+
+new Redis({
+    port: 6379, // Redis port
+    host: "127.0.0.1", // Redis host
+    username: "default", // needs Redis >= 6
+    password: password
+  });
+
+module.exports = redis
